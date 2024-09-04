@@ -14,6 +14,7 @@ body {
     display: flex;
     justify-content: center;
     align-items:center;
+    text-transform: capitalize;
 
 }
 
@@ -21,4 +22,107 @@ main {
     display: flex;
     width: 80vw;
     height: 80vh;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.30);
+}
+
+main div.container-esquerda {
+    background-color: rgb(241, 219, 180);
+    width: 50%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ALINHAMENTO */
+
+img {
+    width: 80%;
+}
+
+main div.container-direita{
+    background-color: white;
+    width: 50%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: rgb(91, 82, 112);
+    color:white;
+    border-radius: 3px;
+    padding: 5px;
+    border: none;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs label {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 5px 0;
+}
+
+.inputs input {
+    border-radius: 5px;
+    border: none;
+    box-shadow: 1px 1px 2px gray;
+    height: 30px;
+    width: 200;
+}
+
+.inputs input::placeholder {
+    padding-left: 10px;
+}
+
+.inputs input:hover{
+    border: none;
+    box-shadow: 3px 3px 6px rgb(91, 82, 212);
+}
+
+.inputs input:focus {
+    outline: 1.5px solid rgb(91, 82, 112)
+}
+
+.container-genero {
+    width: 100%;
+}
+
+.container-genero h2 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.continuar {
+    width: 100%;
+}
+
+h1 {
+    position: relative;
+}
+
+h1::after {
+    content: "";
+    background-color: green;
+    height: 5px;
+    width: 50px;
+    margin: 0;
+    position: absolute;
+    border-radius: 10px;
+    border: none;
+    left: 0;
+    top: 40px;
 }
