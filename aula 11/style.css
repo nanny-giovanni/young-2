@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+body {
+    background-color: #0027ff;
+background-image: linear-gradient(270deg, #0027ff 0%, #ff000b 46%, #5eff00 100%);
+height: 100vh;
+width: 100vw;
+display: grid;
+place-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 5px ;
+    display: grid;
+    place-items: center;
+    gap: 25px;
+}
+
+div.cabecalho h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+div.numero {
+    background-color: rgb(237, 237, 240);
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+div.numero span {
+    font-size: 35px;
+    font-weight: bold;
+
+}
+
+div.botoes {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+div.botoes button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+
+.voltar,
+.avancar {
+    background-color: aquamarine
+}
+
+.zerar {
+    background-color: rgb(0, 255, 170);
+    color: white;
+}
+
+.voltar:hover,
+.avancar:hover {
+    background-color: rgb(0, 133, 88)
+}
+
+.zerar:hover {
+    background-color: rgb(0, 133, 88);
+    color: white;
+}
