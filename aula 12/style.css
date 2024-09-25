@@ -1,0 +1,34 @@
+body {
+
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 5px ;
+    display: grid;
+    place-items: center;
+    gap: 10px;
+}
+
+input {
+background-color: gray;
+padding: 10px;
+}
+
+button {
+border: none;
+border-radius: 5px;
+}
+
+div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+}
