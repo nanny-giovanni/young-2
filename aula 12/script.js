@@ -29,4 +29,8 @@ function alterar_fundo() {
     if (cor == 'branco') {
         FUNDO.style.backgroundColor = 'white'
     }
+
+    if (cor == 'preto') {
+        FUNDO.style.backgroundColor = 'black'
+    }
 }

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: lightblue;
+}
+
+main.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    padding: 30px;
+    max-width: 400px;
+
+    display: grid;
+    place-items: center;
+    row-gap: 15px;
+}
+
+h1.titulo-questao {
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+label,
+input,
+button {
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(217, 423, 252);
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+    transition: background 0.3s ease-in-out;
+    background-color: rgb(143, 177, 188);
+}
