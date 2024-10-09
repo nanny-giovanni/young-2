@@ -1,6 +1,6 @@
 const QUESTOES_QUIZ = [
     {
-        questao: 'Qual é o elhor protagonista dos animes?',
+        questao: 'Qual é o Melhor protagonista dos animes?',
         a: 'Itadori',
         b: 'Naruto',
         c: 'Saitama',
@@ -43,7 +43,7 @@ const QUESTOES_QUIZ = [
         questao: 'qual o nome do pénultimo boss de resident evil 4 remake?',
         a: 'albert wesker',
         b: 'ada wong',
-        c: 'leon scoot kened',
+        c: 'sadler',
         d: 'krauser',
         correta: 'd',
     },
@@ -80,3 +80,92 @@ const QUESTOES_QUIZ = [
         correta: 'b',
     },
 ]
+
+const QUIZ_TITULO = document.querySelector('h1')
+const ALTERNATIVA_A = document.querySelector('#text_a')
+const ALTERNATIVA_B = document.querySelector('#text_b')
+const ALTERNATIVA_C = document.querySelector('#text_c')
+const ALTERNATIVA_D = document.querySelector('#text_d')
+const BOTAO = document.querySelector('button')
+const QUIZ_CONTAINER = document.querySelector('.container')
+const ALTERNATIVAS = document.querySelectorAll('.resposta')
+
+let questao_atual = 0
+let acertos = 0
+let verificou = false
+
+// EVENTOS
+window.onload = carregar_quiz()
+BOTAO.addEventListener('click', verificar)
+
+// FUNÇÕES
+function carregar_quiz() {
+    const QUESTAO = QUESTOES_QUIZ[questao_atual]
+
+ALTERNATIVAS.forEach((alternativa) => {
+    alternativa.checked = false
+    document.querySelector(`label[for=${alternativa.id}]`).classList.remove('correta', 'incorreta')
+})
+
+    QUIZ_TITULO.innerText = QUESTAO.questao
+    ALTERNATIVA_A.innerText = QUESTAO.a
+    ALTERNATIVA_B.innerText = QUESTAO.b
+    ALTERNATIVA_C.innerText = QUESTAO.c
+    ALTERNATIVA_D.innerText = QUESTAO.d
+    BOTAO.innerText = 'Verificar'
+    verificou = false
+
+}
+
+function verificar() {
+    if (!verificou) {
+        verificar_resposta()
+    }
+    else {
+        proxima_pergunta()
+    }
+}
+
+function pegar_resposta() {
+    let resposta = undefined
+
+    ALTERNATIVAS.forEach((alternativa) => {
+        if (alternativa.checked) {
+            resposta = alternativa.id
+        }
+    })
+    return resposta
+}
+
+function verificar_resposta() {
+    const RESPOSTA_JOGADOR = pegar_resposta()
+    const RESPOSTA_CORRETA = QUESTOES_QUIZ[questao_atual].correta
+
+    ALTERNATIVAS.forEach((alternativa) => {
+        const LABEL = document.querySelector(`label[for=${alternativa.id}]`)
+        if (alternativa.id === RESPOSTA_CORRETA) {
+            LABEL.classList.add('correta')
+        }
+        else if (alternativa. checked) {
+            LABEL.classList.add('incorreta')
+        }
+    })
+
+    if (RESPOSTA_JOGADOR === RESPOSTA_CORRETA) {
+        acertos++
+    }
+    BOTAO.innerText = 'proxima'
+    verificou = true
+
+}
+
+function proxima_pergunta() {
+    questao_atual++
+    maximo_de_questoes = QUESTOES_QUIZ.length
+    if (questao_atual < maximo_de_questoes) {
+        carregar_quiz()
+    }
+    else {
+        QUIZ_CONTAINER.innerHTML = `<h1 id= "questao">Você acertou ${acertos} de ${maximo_de_questoes} perguntas!</h1>`
+    }
+}

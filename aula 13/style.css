@@ -58,3 +58,13 @@ button:hover {
     transition: background 0.3s ease-in-out;
     background-color: rgb(143, 177, 188);
 }
+
+.correta {
+    color: green;
+    font-style: italic;
+}
+
+.incorreta {
+    color: red;
+    font-style: italic;
+}
