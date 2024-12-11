@@ -1,0 +1,33 @@
+div.quadrado {
+width: 200px;
+height: 200px;
+background-color: red;
+border-radius: 10px;
+color: white;
+font-size: 50px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+transition: transform 1s ease;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+
+@keyframes expandir {
+    0% {width: 200px;}
+    50% {width: 100vw;}
+    100% {width: 200px;}
+}
+
+.expandir {
+    animation: expandir 2s ease-in-out infinite;
+}
